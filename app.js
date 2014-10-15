@@ -5,7 +5,7 @@ $(document).ready(function() {
         callbackURL: location.href,
         callbackOnLocationHash: true
     });
-    
+
     var userProfile;
 
     $('.btn-login').click(function(e) {
@@ -31,11 +31,11 @@ $(document).ready(function() {
       });
     });
 
-    
+
     $.ajaxSetup({
       'beforeSend': function(xhr) {
-        if (localStorage.getItem('userToken')) {        
-          xhr.setRequestHeader('Authorization', 
+        if (localStorage.getItem('userToken')) {
+          xhr.setRequestHeader('Authorization',
                 'Bearer ' + localStorage.getItem('userToken'));
         }
       }
@@ -45,5 +45,5 @@ $(document).ready(function() {
         // Just call your API here. The header will be sent
     })
 
-    
+
 });
